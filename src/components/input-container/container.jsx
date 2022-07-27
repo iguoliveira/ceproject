@@ -7,9 +7,10 @@ import { useState, useEffect } from "react";
 export default function Container() {
   const [cep, setCep] = useState("");
   const showCEP = (event) => {
-    setCep(event.target.value);
-    console.log("https://viacep.com.br/ws/" + event.target.value + "/json/");
-  };
+      setCep(event.target.value);
+      console.log("https://viacep.com.br/ws/" + event.target.value + "/json/");
+    }
+    
   return (
     <InputBlock>
       <Input name="CEP" width="normal" value={cep} onChange={showCEP} />
