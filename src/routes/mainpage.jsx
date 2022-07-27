@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 import Navbar from "../components/navbar/navbar";
 import Container from "../components/input-container/container";
 import React from "react";

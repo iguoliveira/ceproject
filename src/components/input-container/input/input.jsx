@@ -2,7 +2,7 @@ import styled from "styled-components";
 import "./input.css";
 
 export default function Input(props) {
-  return <InputArea placeholder={props.name} className={props.width} />;
+  return <InputArea placeholder={props.name} className={props.width} value={props.value} onChange={props.onChange} />;
 }
 
 const InputArea = styled.input`

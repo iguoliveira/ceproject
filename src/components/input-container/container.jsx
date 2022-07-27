@@ -1,21 +1,28 @@
 import styled from "styled-components";
 import Input from "./input/input";
 import Button from "./button/button";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 export default function Container() {
+  const [cep, setCep] = useState("");
+  const showCEP = (event) => {
+    setCep(event.target.value);
+    console.log("https://viacep.com.br/ws/" + event.target.value + "/json/");
+  };
   return (
     <InputBlock>
-        <Input name="CEP" width="normal" />
-        <Blocks>
-          <Input name="Rua" width="first" />
-          <Input name="No" width="second" />
-        </Blocks>
-        <Input name="Bairro" width="normal" />
-        <Blocks>
-          <Input name="Cidade" width="first" />
-          <Input name="UF" width="second" />
-        </Blocks>
-      <Button name="Submit"/>
+      <Input name="CEP" width="normal" value={cep} onChange={showCEP} />
+      <Blocks>
+        <Input name="Rua" width="first" />
+        <Input name="No" width="second" />
+      </Blocks>
+      <Input name="Bairro" width="normal" />
+      <Blocks>
+        <Input name="Cidade" width="first" />
+        <Input name="UF" width="second" />
+      </Blocks>
+      <Button name="Submit" />
     </InputBlock>
   );
 }
