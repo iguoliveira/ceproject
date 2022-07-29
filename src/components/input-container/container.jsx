@@ -5,12 +5,12 @@ import Button from "./button/button";
 export default function Container() {
   return (
     <InputBlock>
-      <Input name="CEP" width="normal" />
-      <Input name="Rua" width="first" />
-      <Input name="No" width="second" />
-      <Input name="Bairro" width="normal" />
-      <Input name="Cidade" width="first" />
-      <Input name="UF" width="second" />
+      <Input name="CEP" />
+      <Input name="Rua" />
+      <Input name="No" />
+      <Input name="Bairro" />
+      <Input name="Cidade" />
+      <Input name="UF" />
       <Button name="Submit" />
     </InputBlock>
   );

@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
-export default function Button(props) {
-  return <Btn>{props.name}</Btn>;
+Button.defaultProps = {
+
+}
+
+export default function Button({name = "sim"}) {
+  return <Btn>{name}</Btn>;
 }
 
 const Btn = styled.button`
