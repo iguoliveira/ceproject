@@ -1,46 +1,23 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
 import Links from "./links/links";
 
 export default function Navbar() {
-  return (
-    <Container>
-      <Link to="/" className="link">
-        CEP
-      </Link>
-      <LinkItems>
-        <Links link="https://github.com/iguoliveira" linkName="Github" />
-      </LinkItems>
-    </Container>
-  );
+    return (
+        <div class="header u-unselectable header-animated">
+            <div class="header-brand">
+                <div class="nav-item no-hover">
+                    <a><h6 class="title">CEPROJECT</h6></a>
+                </div>
+            </div>
+            <div class="header-nav" id="header-menu">
+                <div class="nav-right">
+                    <div class="nav-item has-sub toggle-hover" id="dropdown">
+                        <a class="nav-dropdown-link">Know Me</a>
+                        <ul class="dropdown-menu dropdown-animated" role="menu">
+                            <li role="menu-item"><Links link="https://github.com/iguoliveira" linkName="Github" /></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 }
-
-const Container = styled.div`
-  width: 100%;
-  position: absolute;
-  z-index: 1;
-  padding: 20px 0px;
-  background-color: #744eaa;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-
-  .link {
-    text-decoration: none;
-    color: white;
-    cursor: pointer;
-    font-size: 1.5em;
-    margin-left: 20px;
-
-    &:hover {
-      color: #cacaca;
-      transition: 200ms;
-    }
-  }
-`;
-
-const LinkItems = styled.div`
-  margin-right: 20px;
-`;

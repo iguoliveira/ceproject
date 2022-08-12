@@ -14,29 +14,25 @@ export default function Mainpage() {
         setCep(data);
       });
   }, []);
-  
+
   return (
     <>
       <Navbar />
       <ContainerBlock>
         <Container />
         <DOV>{cepData.logradouro}</DOV>
-      </ContainerBlock>      
+      </ContainerBlock>
     </>
   );
 }
 
 const ContainerBlock = styled.div`
-  width: 100%;
-  position: absolute;
-  z-index: 0;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+height: 100vh;
+width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 `;
 
 const DOV = styled.div`

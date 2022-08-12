@@ -25,4 +25,5 @@ const InputBlock = styled.div`
   align-items: center;
   justify-content: center;
   gap: 20px;
+  width: 30%;
 `;

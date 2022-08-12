@@ -18,6 +18,7 @@ const Btn = styled.button`
   border-radius: 4px;
 
   &:hover{
+    color: white;
     box-shadow: 3px 4px 0 black;
     transition: 120ms ease-in-out;
   }

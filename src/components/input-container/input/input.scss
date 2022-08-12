@@ -12,7 +12,7 @@
 
 .input {
   position: relative;
-  
+
   &__label {
     position: absolute;
     left: 0;
@@ -40,13 +40,8 @@
     border-radius: var(--size-radius);
     cursor: pointer;
 
-    &:hover{
-      border: 2px solid var(--color-accent);
-    }
-    
     &:focus,
     &:not(:placeholder-shown) {
-      outline: none;
       & + .input__label {
         transform: translate(.25rem, -65%) scale(.8);
         color: var(--color-accent);
