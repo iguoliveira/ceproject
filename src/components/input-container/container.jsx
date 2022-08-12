@@ -1,16 +1,32 @@
 import styled from "styled-components";
 import Input from "./input/input";
 import Button from "./button/button";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function Container() {
+  const [cepData, setCep] = useState([]);
+  const [cepField, setCepField] = useState("")
+
+
+  const zimbas = () => {
+    axios.get(`https://viacep.com.br/ws/${cepField}/json/`)
+      .then(function (response) {
+        setCep(response.data)
+      })
+  }
+
+  const inputTextValue = (event) => {
+    setCepField(event.target.value)
+  }
+
   return (
     <InputBlock>
-      <Input name="CEP" />
-      <Input name="Rua" />
-      <Input name="No" />
-      <Input name="Bairro" />
-      <Input name="Cidade" />
-      <Input name="UF" />
+      <Input name="CEP" value={cepField} onchange={inputTextValue} focusout={zimbas}/>
+      <Input name="Rua" value={cepData.logradouro} />
+      <Input name="Bairro" value={cepData.bairro} />
+      <Input name="Cidade" value={cepData.localidade} />
+      <Input name="UF" value={cepData.uf} />
       <Button name="Submit" />
     </InputBlock>
   );

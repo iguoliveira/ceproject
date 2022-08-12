@@ -2,7 +2,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
 import About from "./routes/about";
-import 'cirrus-ui'; 
+import 'cirrus-ui';
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
