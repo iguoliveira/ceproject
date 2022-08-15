@@ -9,14 +9,13 @@ export default function Container() {
   const [cepField, setCepField] = useState("")
 
 
-  const zimbas = () => {
+  const getApiData = () => {
     axios.get(`https://viacep.com.br/ws/${cepField}/json/`)
       .then(function (response) {
         setCep(response.data)
       })
       .catch(function(error){
         setCep("")
-        console.log(error)
       })
   }
 
@@ -26,7 +25,7 @@ export default function Container() {
 
   return (
     <InputBlock>
-      <Input name="CEP" value={cepField} onchange={inputTextValue} focusout={zimbas} readonly={false} />
+      <Input name="CEP" value={cepField} onchange={inputTextValue} focusout={getApiData} readonly={false} />
       <Input name="Rua" value={cepData.logradouro} />
       <Input name="Bairro" value={cepData.bairro} />
       <Input name="Cidade" value={cepData.localidade} />

@@ -1,10 +1,6 @@
 import styled from "styled-components";
 
-Button.defaultProps = {
-
-}
-
-export default function Button({name = "sim"}) {
+export default function Button({name = "Unnamed"}) {
   return <Btn>{name}</Btn>;
 }
 
