@@ -1,6 +1,6 @@
-import Mainpage from "./routes/mainpage"
+import { Mainpage } from "./pages/mainpage"
 
-export default function App() {
+export const App = () => {
   return (
     <Mainpage />
   );

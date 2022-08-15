@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function Links(props) {
+export const Links = (props) => {
   return <NavLinks href={props.link} target={"_blank"}>{props.linkName}</NavLinks>;
 }
 

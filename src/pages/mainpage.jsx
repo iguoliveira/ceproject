@@ -1,26 +1,22 @@
 import styled from "styled-components";
-import Navbar from "../components/navbar/navbar";
-import Container from "../components/input-container/container";
+import { Navbar } from "../components/navbar/navbar";
+import { Container } from "../components/input-container/container";
+import { Footer } from "../components/footer/Footer"
 
-export default function Mainpage() {  
+export const Mainpage = () => {  
   return (
     <>
       <Navbar />
       <ContainerBlock>
         <Container />
+        <Footer />
       </ContainerBlock>
     </>
   );
 }
 
 const ContainerBlock = styled.div`
-height: 100vh;
-width: 100%;
 display: flex;
 flex-direction: column;
 align-items: center;
 `;
-
-const DOV = styled.div`
-  color: white;
-`

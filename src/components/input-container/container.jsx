@@ -1,10 +1,9 @@
 import styled from "styled-components";
-import Input from "./input/input";
-import Button from "./button/button";
+import { Input } from "./input/input";
 import { useState } from "react";
 import axios from "axios";
 
-export default function Container() {
+export const Container = () => {
   const [cepData, setCep] = useState([]);
   const [cepField, setCepField] = useState("")
 
@@ -30,7 +29,6 @@ export default function Container() {
       <Input name="Bairro" value={cepData.bairro} />
       <Input name="Cidade" value={cepData.localidade} />
       <Input name="UF" value={cepData.uf} />
-      <Button name="Submit" />
     </InputBlock>
   );
 }

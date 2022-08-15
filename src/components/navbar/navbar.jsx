@@ -1,6 +1,6 @@
-import Links from "./links/links";
+import { Links } from "./links/links";
 
-export default function Navbar() {
+export const Navbar = () => {
     return (
         <div className="header u-unselectable header-animated">
             <div className="header-brand">
