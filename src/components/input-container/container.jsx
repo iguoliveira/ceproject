@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Input from "./input/input";
 import Button from "./button/button";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 export default function Container() {
@@ -14,6 +14,10 @@ export default function Container() {
       .then(function (response) {
         setCep(response.data)
       })
+      .catch(function(error){
+        setCep("")
+        console.log(error)
+      })
   }
 
   const inputTextValue = (event) => {
@@ -22,7 +26,7 @@ export default function Container() {
 
   return (
     <InputBlock>
-      <Input name="CEP" value={cepField} onchange={inputTextValue} focusout={zimbas}/>
+      <Input name="CEP" value={cepField} onchange={inputTextValue} focusout={zimbas} readonly={false} />
       <Input name="Rua" value={cepData.logradouro} />
       <Input name="Bairro" value={cepData.bairro} />
       <Input name="Cidade" value={cepData.localidade} />
